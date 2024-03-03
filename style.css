@@ -1,0 +1,116 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins' , sans-serif;
+                /* 設定所有文字的字型為 'Poppins'，如果 'Poppins' 不可用，則使用系統的 sans-serif 字型 */
+    box-sizing: border-box;
+                /*元素的寬度和高度包括內邊距和邊框，但不包括外邊距 */
+}
+
+.container{
+    width:100%;
+    min-height:100vh;
+    background: linear-gradient(135deg , #153677 , #4e085f);
+                /* 漸變 ******/
+    padding: 10px;
+}
+
+.todo{
+    width: 100%;
+    max-width: 540px;
+    background-color: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo h2{
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo h2 img{
+    width: 30px;
+    margin-left: 10px;
+}
+
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-left: 5px;
+}
+
+input{
+    flex: 1;/*使元素成為具有彈性的元素，它會根據可用空間拉伸或收縮*/
+    border: none;
+    outline: none; /*在元素被選擇時不會有預設的外框*/
+    background: transparent; /*透明*/
+    padding: 10px;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+button{
+    border: none;
+    outline: none;
+    padding: 16px;
+    background: #ff5945;
+    color:#fff;
+    font-size: 16px;
+    cursor: pointer; /*屬標圖是會改變*/
+    border-radius: 40px;
+}
+
+ul li{
+    list-style: none;
+    font-size: 17px;
+    padding: 17px 8px 12px 50px;
+    user-select: none;  /*無法選字時反藍*/
+    cursor: pointer;
+    position: relative;
+}
+
+
+ul li::before{ /*偽元素 加在在li之前*/
+    content: ''; /*偽元素的內容*/
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(images/unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px ;
+    left: 15px;
+}
+
+ul li.checked{
+    color:#6e6e6e ;
+    text-decoration: line-through; /*line-through (中線/刪除線)*/
+}
+
+ul li.checked::before{
+    background-image: url(images/checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0px;
+    top: 5px;
+    width: 40px;
+    font-size: 22px;
+    color: #555;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover{
+    background-color: #bbbbbb;
+}
